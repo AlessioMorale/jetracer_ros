@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- params -->
+  <rosparam command="load" file="$(find jetracer_ros)/parameters.yaml" /> -->
+
+  <!-- nodes -->
+  <node pkg="pca9685_board" name="pca9685_board_node" type="pca9685_board_node"/>
+</launch>

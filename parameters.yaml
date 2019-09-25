@@ -9,12 +9,12 @@ servos:
     channel: 0
     center: 320
     direction: 1
-    range: 100
+    range: 120
   steering:
     channel: 11
     center: 325
     direction: 1
-    range: 160
+    range: 180
 
 teleop:
   drive:
@@ -28,3 +28,10 @@ teleop:
       - axis: 2
         target: angular.z
         scale: 1.0
+ina219:
+  device: "/dev/i2c-1"
+  address: 68
+  publish_voltage_bus: true
+  publish_power: true
+  rshunt: 0.1
+  calibration: 4096
