@@ -28,6 +28,19 @@ teleop:
       - axis: 2
         target: angular.z
         scale: 1.0
+  start_recording:
+    type: service
+    service_name: /recording
+    service_request:
+      status: True
+    buttons: [2]
+  stop_recording:
+    type: service
+    service_name: /recording
+    service_request:
+      status: False
+    buttons: [1]
+
 ina219:
   device: "/dev/i2c-1"
   address: 68
@@ -36,6 +49,6 @@ ina219:
   rshunt: 0.1
   calibration: 4096
 trainer:
-  camera_topic: /camera/image
-  manual_twist_topic: servos_drive
+  camera_topic: /camera/image_raw
+  manual_twist_topic: /servos_drive
   storage: /home/jetracer/training
