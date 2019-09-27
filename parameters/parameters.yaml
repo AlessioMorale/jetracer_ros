@@ -35,3 +35,7 @@ ina219:
   publish_power: true
   rshunt: 0.1
   calibration: 4096
+trainer:
+  camera_topic: /camera/image
+  manual_twist_topic: servos_drive
+  storage: /home/jetracer/training

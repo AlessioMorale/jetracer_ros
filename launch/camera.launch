@@ -15,7 +15,7 @@
     <param name="frame_id" value="/camera_frame"/>
     <param name="sync_sink" value="true"/>
   </node>
-    <node pkg="nodelet" type="nodelet" name="image_proc_debayer"
+  <node pkg="nodelet" type="nodelet" name="image_proc_debayer"
 	args="load image_proc/debayer camera_nodelet_manager">
     <remap from="camera_info" to="camera/camera_info" />
     <remap from="image_color" to="camera/image_color" />
