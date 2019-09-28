@@ -44,10 +44,18 @@ teleop:
 ina219:
   device: "/dev/i2c-1"
   address: 68
-  publish_voltage_bus: true
-  publish_power: true
   rshunt: 0.1
   calibration: 4096
+  # POWER_SUPPLY_TECHNOLOGY_UNKNOWN = 0
+  # POWER_SUPPLY_TECHNOLOGY_NIMH = 1
+  # POWER_SUPPLY_TECHNOLOGY_LION = 2
+  # POWER_SUPPLY_TECHNOLOGY_LIPO = 3
+  # POWER_SUPPLY_TECHNOLOGY_LIFE = 4
+  # POWER_SUPPLY_TECHNOLOGY_NICD = 5
+  # POWER_SUPPLY_TECHNOLOGY_LIMN = 6
+  technology: 3
+  capacity: 2200
+  cells: 2
 trainer:
   camera_topic: /camera/image_raw
   manual_twist_topic: /servos_drive
