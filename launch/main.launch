@@ -8,6 +8,7 @@
   <node name="joy_node" pkg="joy" type="joy_node" respawn="true" />
   <node name="joy_teleop" pkg="joy_teleop" type="joy_teleop.py" />
   <node pkg="jetracer_ros" name="oled_node" type="oled_node.py" />
-  <node pkg="power_ina129" name="ina219_node" type="ina219_node"/>
+  <include file="$(find jetracer_ros)/launch/battery.launch"/>
+  <include file="$(find jetracer_ros)/launch/trainer.launch"/>
   <include file="$(find jetracer_ros)/launch/camera.launch"/>
 </launch>

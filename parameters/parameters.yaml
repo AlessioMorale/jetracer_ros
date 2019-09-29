@@ -60,3 +60,5 @@ trainer:
   camera_topic: /camera/image_raw
   manual_twist_topic: /servos_drive
   storage: /home/jetracer/training
+  sample_interval: 125
+  throttle_threshold: 0.05
