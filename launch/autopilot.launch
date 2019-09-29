@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- params -->
+  <rosparam command="load" file="$(find jetracer_ros)/parameters/parameters.yaml" /> -->
+
+  <!-- nodes -->
+  <node name="autopilot" pkg="jetracer_ros" type="autopilot_node.py" respawn="false" />
+</launch>

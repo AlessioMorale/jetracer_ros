@@ -5,6 +5,8 @@ joy_node:
 
 servos:
   pwm_frequency: 50
+  absolute_topic: /servo_absolute
+  twist_topic: /autopilot/drive
   throttle:
     channel: 0
     center: 320
@@ -14,20 +16,20 @@ servos:
     channel: 11
     center: 325
     direction: 1
-    range: 180
+    range: 160
 
 teleop:
   drive:
     type: topic
     message_type: geometry_msgs/Twist
-    topic_name: servos_drive
+    topic_name: /manual/drive
     axis_mappings:
       - axis: 1
         target: linear.x
-        scale: 1.0
+        scale: 0.6
       - axis: 2
         target: angular.z
-        scale: 1.0
+        scale: 0.6
   start_recording:
     type: service
     service_name: /recording
@@ -56,9 +58,18 @@ ina219:
   technology: 3
   capacity: 2200
   cells: 2
+
 trainer:
   camera_topic: /camera/image_raw
   manual_twist_topic: /servos_drive
   storage: /home/jetracer/training
   sample_interval: 125
   throttle_threshold: 0.05
+
+autopilot:
+  camera_topic: /camera/image_raw
+  manual_twist_topic: /manual/drive
+  control_interval: 100.0
+  throttle_threshold: 0.05
+  model: "/home/jetracer/notebook/2019-09-29T140313.637906_2_trt.pth"
+  published_twist: /autopilot/drive
